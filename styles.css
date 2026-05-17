@@ -88,11 +88,38 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1
 }
 .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
+.hero-visual-wrap {
+  justify-self: end;
+  margin: 0;
+}
+
 .hero-visual {
   display: block;
-  justify-self: end;
-  max-width: 100%;
-  height: auto;
+  width: min(420px, 100%);
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.28), 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+.hero-visual-caption {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.hero-name {
+  color: #f5df9c;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+}
+
+.hero-title {
+  color: #f3d5e5;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
 }
 
 .text-block { max-width: 75ch; }
@@ -106,6 +133,7 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1
 .pillar p { color: var(--muted); font-size: .95rem; margin: 0; }
 .about-rinita-grid { display: grid; grid-template-columns: minmax(250px, 340px) 1fr; gap: 1.5rem; align-items: center; }
 .rinita-image, .book-mockup { border: 1px solid #e5dbc7; border-radius: 14px; min-height: 310px; background: linear-gradient(140deg, #fbf7ef, #f2e8d4); display: grid; place-items: center; color: #86652b; text-align: center; padding: 1rem; }
+.rinita-image { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; min-height: 310px; }
 .elegant-quote { margin: 1rem 0 0; padding: 1rem 1.2rem; font-size: 1.15rem; font-style: italic; border-left: 3px solid var(--gold); background: #fffef9; border-radius: 10px; }
 .featured-resource { display: grid; grid-template-columns: minmax(230px, 300px) 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
 .resource-tagline { color: #86652b; font-weight: 700; letter-spacing: .04em; }
@@ -130,7 +158,7 @@ input[type='email'] { flex: 1; min-width: 220px; padding: .8rem; border: 1px sol
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-copy { order: 1; }
-  .hero-visual { order: 2; justify-self: center; }
+  .hero-visual-wrap { order: 2; justify-self: center; }
 }
 @media (max-width: 840px) {
   .menu-toggle { display: block; }
