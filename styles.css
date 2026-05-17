@@ -1,9 +1,13 @@
 :root {
-  --black: #0b0b0b;
+  --black: #0B090B;
+  --deep-plum: #210717;
+  --burgundy: #3B1025;
+  --gold: #D6B35A;
+  --soft-gold: #F2D98B;
+  --cream: #F7EFE6;
+  --muted-pink: #C75A8A;
+  --neo-pink: #FF4FA3;
   --white: #ffffff;
-  --gold: #d4af37;
-  --neo-pink: #ff4fa3;
-  --gold-soft: #f1dd9f;
   --text: #1b1b1b;
   --muted: #646464;
   --surface: #f8f5f0;
@@ -39,17 +43,20 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1
 .menu-toggle { display: none; border: 0; background: none; font-size: 1.5rem; }
 
 .hero {
-  color: var(--white);
+  color: var(--cream);
   position: relative;
   overflow: clip;
-  background: radial-gradient(circle at 80% 20%, rgba(212,175,55,.28) 0%, rgba(212,175,55,0) 40%),
-    linear-gradient(145deg, #0b0b0b 0%, #171717 45%, #221b0e 100%);
+  background:
+    radial-gradient(circle at 18% 30%, rgba(199, 90, 138, 0.20) 0%, rgba(199, 90, 138, 0) 46%),
+    radial-gradient(circle at 82% 76%, rgba(59, 16, 37, 0.75) 0%, rgba(59, 16, 37, 0) 53%),
+    radial-gradient(circle at 78% 18%, rgba(255, 79, 163, 0.12) 0%, rgba(255, 79, 163, 0) 42%),
+    linear-gradient(145deg, var(--black) 0%, var(--deep-plum) 54%, var(--burgundy) 100%);
 }
 .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 2rem; position: relative; z-index: 1; }
 .hero-copy { max-width: 42rem; }
-.eyebrow { color: var(--gold-soft); text-transform: uppercase; letter-spacing: .1em; font-size: .78rem; margin-bottom: 1rem; }
-.hero h1 { font-size: clamp(2rem, 4.6vw, 4.35rem); margin-bottom: .8rem; color: #f2d78b; }
-.accent-pink { color: var(--neo-pink); }
+.eyebrow { color: var(--soft-gold); text-transform: uppercase; letter-spacing: .1em; font-size: .78rem; margin-bottom: 1rem; }
+.hero h1 { font-size: clamp(2rem, 4.6vw, 4.35rem); margin-bottom: .8rem; color: var(--gold); text-shadow: 0 2px 20px rgba(214,179,90,.22); }
+.accent-pink { color: var(--muted-pink); text-shadow: 0 0 14px rgba(199,90,138,.38); }
 .crown-separator {
   color: var(--neo-pink);
   font-size: 1.15rem;
@@ -68,22 +75,22 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1
 .crown-separator::after {
   background: linear-gradient(90deg, rgba(212,175,55,.8), rgba(212,175,55,0));
 }
-.hero-subhead { font-size: 1.1rem; color: #ece8de; max-width: 56ch; }
+.hero-subhead { font-size: 1.1rem; color: var(--cream); max-width: 56ch; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.2rem; }
 
 .btn {
   display: inline-block; padding: .9rem 1.25rem; border-radius: 999px; text-decoration: none; font-weight: 600;
-  border: 1px solid rgba(255,255,255,.35); cursor: pointer;
+  border: 1px solid rgba(214,179,90,.65); cursor: pointer;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(255,255,255,.09);
+  background: rgba(11,9,11,.26);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.btn-gold { background: linear-gradient(140deg, #e5c362, #d4af37); color: #141414; box-shadow: 0 0 0 rgba(212,175,55,0); }
-.btn-pink { color: #ffe8f4; border-color: rgba(255,79,163,.8); background: linear-gradient(140deg, rgba(255,79,163,.3), rgba(255,79,163,.15)); }
+.btn-gold { background: rgba(214,179,90,.06); color: var(--soft-gold); box-shadow: inset 0 0 0 1px rgba(214,179,90,.45), 0 0 16px rgba(214,179,90,.2); }
+.btn-pink { color: var(--cream); border-color: rgba(199,90,138,.72); background: linear-gradient(140deg, rgba(59,16,37,.56), rgba(199,90,138,.18)); box-shadow: inset 0 0 0 1px rgba(255,79,163,.15); }
 .btn:hover, .btn:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 0 18px rgba(212,175,55,.45), 0 12px 22px rgba(0,0,0,.25);
+  box-shadow: 0 0 20px rgba(214,179,90,.35), 0 0 32px rgba(199,90,138,.2), 0 12px 22px rgba(0,0,0,.25);
   border-color: rgba(212,175,55,.75);
 }
 .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
@@ -100,7 +107,7 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1
   border-radius: 24px;
   object-fit: cover;
   object-position: center top;
-  box-shadow: 0 0 24px rgba(212, 175, 55, 0.28), 0 14px 36px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 22px rgba(214, 179, 90, 0.24), 0 0 30px rgba(199, 90, 138, 0.16), 0 14px 36px rgba(0, 0, 0, 0.35);
 }
 
 .hero-visual-caption {
