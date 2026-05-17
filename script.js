@@ -45,6 +45,21 @@ document.querySelectorAll('.primary-nav a').forEach((link) => {
   });
 });
 
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (event) => {
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!target.hasAttribute('tabindex')) {
+      target.setAttribute('tabindex', '-1');
+    }
+    target.focus({ preventScroll: true });
+  });
+});
+
 const revealElements = document.querySelectorAll('.reveal-up');
 const observer = new IntersectionObserver(
   (entries) => {
