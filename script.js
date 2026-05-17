@@ -75,18 +75,4 @@ const observer = new IntersectionObserver(
 
 revealElements.forEach((el) => observer.observe(el));
 
-const heroImage = document.querySelector('.hero-image');
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (heroImage && !reduceMotion) {
-  const handleParallax = () => {
-    const top = window.scrollY;
-    const shift = Math.max(-6, Math.min(14, top * 0.025));
-    heroImage.style.setProperty('--parallax', `${shift}px`);
-  };
-
-  handleParallax();
-  window.addEventListener('scroll', handleParallax, { passive: true });
-}
-
 document.getElementById('year').textContent = new Date().getFullYear();
